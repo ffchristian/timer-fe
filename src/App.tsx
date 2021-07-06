@@ -3,13 +3,14 @@ import {ThemeProvider} from "styled-components";
 import  {useDarkMode} from "./utils/useDarkMode"
 import { GlobalStyles } from "./utils/Globalstyle";
 import { lightTheme, darkTheme } from "./utils/Themes";
-import Toggle from "./components/Toggler";
+import Toggle from "./components/toggler/Toggler";
 import Timer from "./components/timer/Timer";
 // import CardList from "./components/CardList";
 
 // CSS imports
 import "./App.css";
-import "././components/timer/timer.css";
+import "./components/timer/timer.css";
+import "./components/toggler/toggler.css";
 
 const App= () => {
 

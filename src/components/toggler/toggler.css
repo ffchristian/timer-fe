@@ -1,0 +1,63 @@
+.toggle-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.toggle {
+  margin-right: 10px;
+  position: relative;
+  display: block;
+  width: 5rem;
+  height: 2rem;
+}
+
+.toggle-icon {
+  float: right;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+.toggle-icon:last-child {
+  margin-right: 20px;
+}
+
+.toggle input {
+  display: none;
+}
+
+.roundbutton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #33455e;
+  display: block;
+  transition: all 0.3s;
+  border-radius: 3.4rem;
+  cursor: pointer;
+}
+
+.roundbutton:before {
+  position: absolute;
+  content: "";
+  height: 1.4rem;
+  width: 1.5rem;
+  border-radius: 100%;
+  display: block;
+  left: 0.5rem;
+  bottom: 0.3rem;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+input:checked + .roundbutton {
+  background-color: #363537;
+}
+
+input:checked + .roundbutton:before  {
+  transform: translate(2.6rem, 0);
+}
