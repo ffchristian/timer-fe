@@ -23,7 +23,7 @@ export default class Toggle extends Component<ToggleType> {
       height: 4rem;
       outline: none;
       float: right;
-      right: 10%;
+      right: 5%;
       }
     `;
   

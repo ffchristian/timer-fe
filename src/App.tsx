@@ -23,8 +23,8 @@ const App= () => {
     <ThemeProvider theme={themeMode}>
       <>
       <GlobalStyles/>
+      <Toggle theme={theme} toggleTheme={themeToggler} />
         <div className="App">
-          <Toggle theme={theme} toggleTheme={themeToggler} />
           {
             <Timer themeMode={themeMode} />
           }
