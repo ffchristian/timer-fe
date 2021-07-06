@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import TimerService from '../../services/timer.service';
 import { ITheme } from '../../utils/Themes';
