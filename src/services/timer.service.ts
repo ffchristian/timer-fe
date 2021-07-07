@@ -1,25 +1,29 @@
-
-interface ITimerRequest {
-  archiveUrl: string;
-  archived: boolean;
-  forks: number;
-}
 export default class TimerService {
-  private apiUrl = "https://api.github.com/users/hacktivist123/repos";
+  private apiUrl = process.env.API_URL || "http://localhost:5000/api";
 
-  async getTimerData(): Promise<[ITimerRequest]> {
-    const data = await fetch(this.apiUrl);
-    const timerRequest = (await data.json()).map( (obj: any) => {
-      return {
-        archiveUrl: obj.archive_url,
-        archived: obj.archived,
-        forks: obj.forks,
-      };
-    });
-    return timerRequest;
+  async getTimerData(): Promise<number> {
+    try {
+      const endpoint = "/timer/current";
+      const data = await fetch(`${this.apiUrl}${endpoint}`);
+      return  (await data.json()).curentTime;
+    } catch (error) {
+      return 0;
+    }
   }
-  async saveTimerData() {
-    const data = await fetch(this.apiUrl);
-    return await data.json();
+
+  async saveTimerData(time: number) {
+    try {
+      const endpoint = "/timer/";
+      const data = await fetch(`${this.apiUrl}${endpoint}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ time })
+      });
+    return (await data.json()).curentTime;
+    } catch (error) {
+      return 0;
+    }
   }
 }

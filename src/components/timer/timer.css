@@ -12,3 +12,8 @@
   font-size: 3rem;
   padding: 2rem;
 }
+
+.timer-icon {
+  bottom: -2px;
+  position: relative;
+}
