@@ -3,12 +3,6 @@ import styled from 'styled-components';
 import TimerService from '../../services/timer.service';
 import { ITheme } from '../../utils/Themes';
 
-type TimerState = {
-  seconds?: number,
-  isActive?: boolean,
-  themeMode: ITheme
-}
-
 export default class Timer extends Component<TimerState> {
   public state: any;
   private interval: any;
@@ -78,52 +72,8 @@ export default class Timer extends Component<TimerState> {
   }
 }
 
-
-
-// const Timer = ({themeMode}: {themeMode: ITheme}) => {
-//   const [seconds, setSeconds] = useState(0);
-//   const [isActive, setIsActive] = useState(false);
-
-//   const toggle = () => {
-//     setIsActive(!isActive);
-//   }
-
-//   function reset() {
-//     setSeconds(0);
-//     setIsActive(false);
-//   }
-
-//   useEffect(() => {
-//     let interval: any = undefined;
-//     if (isActive) {
-//       interval = setInterval(() => {
-//         setSeconds(seconds => seconds + 1);
-//       }, 1000);
-//     } else if (!isActive && seconds !== 0) {
-//       clearInterval(interval);
-//     }
-//     return () => clearInterval(interval);
-//   }, [isActive, seconds]);
-
-//   const timerMask = (seconds: number) => {
-//     return new Date(seconds * 1000).toISOString().substr(11, 8);
-//   };
-
-//   return (
-//     <div className="timer-app">
-//       <div className="time">
-//         {timerMask(seconds)}
-//       </div>
-//       <div className="row">
-//         <Button className={`timer-button`} onClick={toggle}>
-//           {isActive ? 'Pause' : 'Start'}
-//         </Button>
-//         <button className="timer-button" onClick={reset}>
-//           Reset
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Timer;
+type TimerState = {
+  seconds?: number,
+  isActive?: boolean,
+  themeMode: ITheme
+}
