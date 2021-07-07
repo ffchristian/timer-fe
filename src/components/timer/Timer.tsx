@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import TimerService from '../../services/timer.service';
-import { ITheme } from '../../utils/Themes';
+import React, { Component } from "react";
+import styled from "styled-components";
+import TimerService from "../../services/timer.service";
+import { ITheme } from "../../utils/Themes";
 
 export default class Timer extends Component<TimerState> {
   public state: any;
@@ -10,11 +10,11 @@ export default class Timer extends Component<TimerState> {
   constructor(props: any) {
     super(props);
     this.state = {isActive: false, seconds: 0};
-    
+
   }
 
   async componentDidMount() {
-    console.log('This is your data', await this.timerService.getTimerData());
+    console.log("This is your data", await this.timerService.getTimerData());
   }
 
   async tick() {
@@ -24,7 +24,7 @@ export default class Timer extends Component<TimerState> {
       }, 1000);
     } else if (!this.state.isActive && this.state.seconds !== 0) {
       clearInterval(this.interval);
-      console.log('This is your data', await this.timerService.getTimerData());
+      console.log("This is your data", await this.timerService.getTimerData());
     }
   }
 
@@ -61,7 +61,7 @@ export default class Timer extends Component<TimerState> {
         </div>
         <div className="row">
           <Button className={`timer-button`} onClick={this.toggle.bind(this)}>
-            {this.state.isActive ? 'Pause' : 'Start'}
+            {this.state.isActive ? "Pause" : "Start"}
           </Button>
           <button className="timer-button" onClick={this.reset.bind(this)}>
             Reset
@@ -76,4 +76,4 @@ type TimerState = {
   seconds?: number,
   isActive?: boolean,
   themeMode: ITheme
-}
+};

@@ -1,11 +1,11 @@
 
 interface ITimerRequest {
-  archiveUrl: string,
-  archived: boolean,
-  forks: number
+  archiveUrl: string;
+  archived: boolean;
+  forks: number;
 }
 export default class TimerService {
-  private apiUrl = 'https://api.github.com/users/hacktivist123/repos';
+  private apiUrl = "https://api.github.com/users/hacktivist123/repos";
 
   async getTimerData(): Promise<[ITimerRequest]> {
     const data = await fetch(this.apiUrl);
@@ -14,7 +14,7 @@ export default class TimerService {
         archiveUrl: obj.archive_url,
         archived: obj.archived,
         forks: obj.forks,
-      }
+      };
     });
     return timerRequest;
   }

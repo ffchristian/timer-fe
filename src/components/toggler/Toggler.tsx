@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import React, { Component } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 type ToggleType = {
   theme: string,
   toggleTheme: () => void
-}
+};
 
 export default class Toggle extends Component<ToggleType> {
 
@@ -19,8 +19,6 @@ export default class Toggle extends Component<ToggleType> {
           </label>
         }
         <span className="toggle-icon"><FaSun /></span>
-        
-        
       </div>
     );
   }

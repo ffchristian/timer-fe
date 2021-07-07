@@ -1,9 +1,9 @@
 // Library imports
 import React from "react";
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 // Util imports
-import  {useDarkMode} from "./utils/useDarkMode"
+import  { useDarkMode } from "./utils/useDarkMode";
 import { GlobalStyles } from "./utils/Globalstyle";
 import { lightTheme, darkTheme } from "./utils/Themes";
 
@@ -16,13 +16,13 @@ import "./App.css";
 import "./components/timer/timer.css";
 import "./components/toggler/toggler.css";
 
-const App= () => {
+const App = () => {
 
   const [theme, themeToggler, mountedComponent] = useDarkMode();
 
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
 
-  if(!mountedComponent) return <div/>
+  if (!mountedComponent) return <div/>;
 
   return (
     <ThemeProvider theme={themeMode}>

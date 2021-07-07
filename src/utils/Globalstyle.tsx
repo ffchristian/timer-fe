@@ -1,5 +1,5 @@
-import { createGlobalStyle} from "styled-components"
-import { ITheme } from "./Themes"
+import { createGlobalStyle } from "styled-components";
+import { ITheme } from "./Themes";
 
 export const GlobalStyles = createGlobalStyle`
   body {
